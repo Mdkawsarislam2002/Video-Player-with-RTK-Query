@@ -1,7 +1,7 @@
-import { useGetVideosQuery } from "../Redux/features/apiSlice/apiSlice";
+import { useGetSingleVideoQuery } from "../Redux/features/apiSlice/apiSlice";
 
 const Videos = () => {
-  const { data } = useGetVideosQuery();
+  const { data } = useGetSingleVideoQuery(1);
   console.log(data);
 
   return <div>Videos</div>;
