@@ -1,15 +1,26 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Redux/store";
-import Videos from "./components/Videos";
 
 //  components
+import Home from "./pages/Home";
+import SingleVideo from "./pages/SingleVideo";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "video/:id",
+      element: <SingleVideo />,
+    },
+  ]);
+
   return (
     <Provider store={store}>
-      <h1>React App</h1>
-
-      <Videos />
+      <RouterProvider router={router} />
     </Provider>
   );
 };
