@@ -48,7 +48,7 @@ const SingleVideo = () => {
             </div>
 
             {/* related videos */}
-            <RelatedVideos />
+            <RelatedVideos id={data?.id} title={data?.title} />
           </div>
         </div>
       </section>
