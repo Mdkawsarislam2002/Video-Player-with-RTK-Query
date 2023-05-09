@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import lws from "../assets/lws.svg";
-import search from "../assets/search.svg";
 
 const Nav = () => {
   return (
@@ -10,21 +9,14 @@ const Nav = () => {
           <Link to="/">
             <img className="h-10" src={lws} alt="Learn with Sumit" />
           </Link>
-          <div className="border border-slate-200 flex items-center bg-white h-10 px-5 rounded-lg text-sm ring-emerald-200">
-            {/* search */}
-            <form>
-              <input
-                className="outline-none border-none mr-2"
-                type="search"
-                name="search"
-                placeholder="Search"
-              />
-            </form>
-            <img
-              className="inline h-4 cursor-pointer"
-              src={search}
-              alt="Search"
-            />
+          {/* btn */}
+          <div>
+            <Link
+              to={"/add"}
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            >
+              Add Video
+            </Link>
           </div>
         </div>
       </nav>
