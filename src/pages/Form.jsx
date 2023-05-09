@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable no-unused-vars */
 // import Success from "../ui/Success";
 import { useState } from "react";
 // import { useAddVideoMutation } from "../Redux/features/apiSlice/apiSlice";
@@ -5,6 +7,7 @@ import { useState } from "react";
 // components
 import TextInput from "../components/TextInput";
 import TextArea from "../components/TextArea";
+import { useFormik } from "formik";
 
 export default function Form() {
   // const addVideo = useAddVideoMutation();
@@ -29,6 +32,22 @@ export default function Form() {
     setViews("");
   };
 
+  const formik = useFormik({
+    initialValues: {
+      title: "",
+      Author: "",
+      description: "",
+      YouTubeVideoLink: "",
+      ThumbnailLink: "",
+      UploadDate: "",
+      VideoDuration: "",
+      views: "",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // addVideo({
@@ -45,71 +64,83 @@ export default function Form() {
   };
 
   return (
-    <form method="POST" onSubmit={handleSubmit}>
+    <form method="POST" onSubmit={formik.handleSubmit}>
       <div className="shadow overflow-hidden sm:rounded-md">
         <div className="px-4 py-5 bg-white sm:p-6">
           <div className="grid grid-cols-6 gap-6">
             <div className="col-span-6 sm:col-span-3">
               <TextInput
                 title="Video title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                id="VideoTitle"
+                //  using formic
+                onChange={formik.handleChange}
+                value={formik.values.title}
+                //  default
+                // value={title}
+                // onChange={(e) => setTitle(e.target.value)}
               />
             </div>
 
             <div className="col-span-6 sm:col-span-3">
               <TextInput
                 title="Author"
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
+                id="author"
+                onChange={formik.handleChange}
+                value={formik.values.Author}
               />
             </div>
 
             <div className="col-span-6">
               <TextArea
                 title="Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                id="Description"
+                onChange={formik.handleChange}
+                value={formik.values.description}
               />
             </div>
 
             <div className="col-span-6">
               <TextInput
                 title="YouTube Video link"
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
+                id="videoLink"
+                onChange={formik.handleChange}
+                value={formik.values.YouTubeVideoLink}
               />
             </div>
 
             <div className="col-span-6">
               <TextInput
+                id="ThumbnailLink"
                 title="Thumbnail link"
-                value={thumbnail}
-                onChange={(e) => setThumbnail(e.target.value)}
+                onChange={formik.handleChange}
+                value={formik.values.ThumbnailLink}
               />
             </div>
 
             <div className="col-span-6 sm:col-span-6 lg:col-span-2">
               <TextInput
                 title="Upload Date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
+                id="UploadDate"
+                onChange={formik.handleChange}
+                value={formik.values.UploadDate}
               />
             </div>
 
             <div className="col-span-6 sm:col-span-3 lg:col-span-2">
               <TextInput
                 title="Video Duration"
-                value={duration}
-                onChange={(e) => setDuration(e.target.value)}
+                id="VideoDuration"
+                onChange={formik.handleChange}
+                value={formik.values.VideoDuration}
               />
             </div>
 
             <div className="col-span-6 sm:col-span-3 lg:col-span-2">
               <TextInput
                 title="Video no of views"
-                value={views}
-                onChange={(e) => setViews(e.target.value)}
+                id="VideoNoOfViews"
+                onChange={formik.handleChange}
+                value={formik.values.views}
               />
             </div>
           </div>
