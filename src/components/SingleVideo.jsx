@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+// import Delete from "./Delete";
 
 /* eslint-disable react/prop-types */
 const SingleVideo = ({ data }) => {
@@ -42,9 +43,7 @@ const SingleVideo = ({ data }) => {
               >
                 Learn with Sumit
               </Link>
-              <p className="text-gray-400 text-xs mt-1">
-                200 views . May 3, 2022
-              </p>
+              {/* <Delete /> */}
             </div>
           </div>
         </div>
