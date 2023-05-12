@@ -1,7 +1,7 @@
 import Nav from "../components/Nav";
 
 import RelatedVideos from "./RelatedVideos";
-import LinkAndUnlike from "./LinkAndUnlike";
+import DeleteOrEditVideo from "./DeleteOrEditVideo";
 
 import { useGetSingleVideoQuery } from "../Redux/features/apiSlice/apiSlice";
 import { useParams } from "react-router-dom";
@@ -38,7 +38,7 @@ const SingleVideo = () => {
                   </h2>
 
                   {/* like/unlike */}
-                  <LinkAndUnlike />
+                  <DeleteOrEditVideo id={id} />
                 </div>
 
                 <div className="mt-4 text-sm text-[#334155] dark:text-slate-400">
