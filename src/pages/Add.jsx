@@ -1,5 +1,5 @@
 import AddVideoNav from "../components/AddVideoNav";
-import AddVideo from "./AddVideo";
+import AddVideo from "../components//AddVideo";
 
 const Add = () => {
   return (

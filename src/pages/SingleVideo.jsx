@@ -1,7 +1,7 @@
 import Nav from "../components/Nav";
 
 import RelatedVideos from "./RelatedVideos";
-import DeleteOrEditVideo from "./DeleteOrEditVideo";
+import DeleteOrEditVideo from "../components/DeleteOrEditVideo";
 
 import { useGetSingleVideoQuery } from "../Redux/features/apiSlice/apiSlice";
 import { useParams } from "react-router-dom";

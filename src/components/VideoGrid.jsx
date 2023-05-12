@@ -7,7 +7,11 @@ const VideoGrid = () => {
   return (
     <>
       <section className="pt-12">
-        <section className="pt-12">
+        <h1 className="text-2xl mx-3  font-bold text-gray-800">All Videos</h1>
+        <p className="text-md  mx-3 mt-2 font-bold text-gray-800">
+          {data?.length} videos found
+        </p>
+        <section className="pt-6">
           <div className="grid grid-cols-12 gap-4 max-w-7xl mx-auto px-5 lg:px-0 min-h-[300px]">
             {isSuccess &&
               data?.length > 0 &&

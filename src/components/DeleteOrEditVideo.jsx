@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useDeleteVideoMutation } from "../Redux/features/apiSlice/apiSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //  icons components
-import Trash from "../components/icons/Trash";
-import EditsIcon from "../components/icons/EditsIcon";
+import Trash from "./icons/Trash";
+import EditsIcon from "./icons/EditsIcon";
 
 const DeleteOrEditVideo = ({ id }) => {
   const [deleteVideo] = useDeleteVideoMutation();
@@ -25,12 +25,12 @@ const DeleteOrEditVideo = ({ id }) => {
             Delete
           </div>
         </div>
-        <div className="flex gap-1 cursor-pointer">
+        <Link to={`/edit/` + id} className="flex gap-1 cursor-pointer">
           <div className="shrink-0">
             <EditsIcon />
           </div>
           <div className="text-sm leading-[1.7142857] text-slate-600">Edit</div>
-        </div>
+        </Link>
       </div>
     </>
   );

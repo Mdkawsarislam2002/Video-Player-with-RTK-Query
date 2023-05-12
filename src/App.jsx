@@ -6,6 +6,7 @@ import store from "./Redux/store";
 import Home from "./pages/Home";
 import SingleVideo from "./pages/SingleVideo";
 import Add from "./pages/Add";
+import EditVideo from "./pages/EditVideo";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const App = () => {
     {
       path: "/add",
       element: <Add />,
+    },
+    {
+      path: "/edit/:id",
+      element: <EditVideo />,
     },
   ]);
 

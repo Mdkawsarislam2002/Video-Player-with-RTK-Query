@@ -6,8 +6,8 @@ import { useAddVideoMutation } from "../Redux/features/apiSlice/apiSlice";
 import { useNavigate } from "react-router-dom";
 
 // components
-import TextInput from "../components/TextInput";
-import TextArea from "../components/TextArea";
+import TextInput from "./TextInput";
+import TextArea from "./TextArea";
 
 export default function Form() {
   const [addVideo, { isSuccess }] = useAddVideoMutation();
