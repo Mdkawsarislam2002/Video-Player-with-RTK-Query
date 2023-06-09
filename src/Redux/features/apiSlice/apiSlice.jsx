@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { letsGetSingleVideo } from "../../../lib/LetsGetSingleVideo";
 
 const apiSlice = createApi({
   reducerPath: "api",
@@ -39,11 +40,7 @@ const apiSlice = createApi({
     }),
 
     DeleteVideo: builder.mutation({
-      query: (id) => ({
-        url: `videos/${id}`,
-        method: "DELETE",
-        body: id,
-      }),
+      query: letsGetSingleVideo,
       invalidatesTags: ["Videos"],
     }),
 

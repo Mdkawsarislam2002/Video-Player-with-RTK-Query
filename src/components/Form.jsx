@@ -1,9 +1,5 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-/* eslint-disable no-unused-vars */
-
 import { useState } from "react";
 import { useAddVideoMutation } from "../Redux/features/apiSlice/apiSlice";
-import { useNavigate } from "react-router-dom";
 
 // components
 import TextInput from "./TextInput";
@@ -11,7 +7,6 @@ import TextArea from "./TextArea";
 
 export default function Form() {
   const [addVideo, { isSuccess }] = useAddVideoMutation();
-  const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
